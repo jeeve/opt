@@ -16,9 +16,13 @@
 	<script src="rest/lib/php_crud_api_transform.js"></script>
 	<script src="js/opt.js"></script>
 </head>
-<body>
+<body ng-controller="optima">
 
-
+<select ng-options="alliage as alliage.Nom for alliage in alliages track by alliage.CodeAlliage" ng-model="alliage" ng-change="changeAlliage()"></select> 
+<br>
+{{alliage}}
+<br>
+{{matieres}}
 
 
 	<footer><p>
