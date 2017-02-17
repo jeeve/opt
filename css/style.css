@@ -1,0 +1,22 @@
+body {
+	background-color: black;
+	font-family: Tahoma;
+	font-size: 12px;
+}
+
+footer {
+	 position: fixed;
+	 left: 0;
+	 bottom: 0;
+	 height: 20px;
+	 z-index: 999;
+	 background-color: #888;
+	 width: 100%;	 
+}
+
+footer p {
+		 text-align: right;	
+		 padding: 0;
+		 margin: 0;
+		 margin-right: 5px;
+}
