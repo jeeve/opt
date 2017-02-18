@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
-<html ng-app="opt">
+<html ng-app="optimex">
 <head>
-	<title>Optima</title>
+	<title>Optimex</title>
 
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	
@@ -14,9 +14,9 @@
 	<script src="js/angular-route.min.js"></script>
 	
 	<script src="rest/lib/php_crud_api_transform.js"></script>
-	<script src="js/opt.js"></script>
+	<script src="js/optimex.js"></script>
 </head>
-<body ng-controller="optima">
+<body ng-controller="optimexCtrl">
 
 <select ng-options="alliage as alliage.Nom for alliage in alliages track by alliage.CodeAlliage" ng-model="alliage" ng-change="changeAlliage()"></select> 
 <br>
