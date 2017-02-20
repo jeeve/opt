@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Client :  127.0.0.1
--- Généré le :  Jeu 16 Février 2017 à 14:47
+-- Généré le :  Lun 20 Février 2017 à 20:00
 -- Version du serveur :  5.7.14
 -- Version de PHP :  5.6.25
 
@@ -17,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de données :  `optima`
+-- Base de données :  `optimex`
 --
 
 -- --------------------------------------------------------
@@ -579,6 +579,261 @@ INSERT INTO `matiere` (`CodeMatiere`, `CodeFamille`, `Nom`, `Prix`, `Stock`) VAL
 -- --------------------------------------------------------
 
 --
+-- Structure de la table `matieresalliage`
+--
+
+CREATE TABLE `matieresalliage` (
+  `CodeAlliage` int(11) NOT NULL,
+  `CodeMatiere` int(11) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Contenu de la table `matieresalliage`
+--
+
+INSERT INTO `matieresalliage` (`CodeAlliage`, `CodeMatiere`) VALUES
+(1, 1),
+(1, 2),
+(1, 4),
+(1, 6),
+(1, 8),
+(1, 11),
+(1, 19),
+(1, 32),
+(1, 44),
+(2, 1),
+(2, 2),
+(2, 3),
+(2, 4),
+(2, 5),
+(2, 6),
+(2, 7),
+(2, 8),
+(2, 9),
+(2, 10),
+(2, 11),
+(2, 12),
+(2, 14),
+(2, 15),
+(2, 16),
+(2, 17),
+(2, 18),
+(2, 19),
+(2, 24),
+(2, 28),
+(2, 30),
+(4, 1),
+(4, 2),
+(4, 3),
+(4, 4),
+(4, 5),
+(4, 6),
+(4, 7),
+(4, 8),
+(4, 9),
+(4, 10),
+(4, 11),
+(4, 12),
+(4, 13),
+(4, 14),
+(4, 15),
+(4, 16),
+(4, 17),
+(4, 18),
+(4, 19),
+(4, 24),
+(4, 28),
+(4, 30),
+(4, 32),
+(4, 34),
+(5, 1),
+(5, 2),
+(5, 3),
+(5, 4),
+(5, 5),
+(5, 6),
+(5, 7),
+(5, 8),
+(5, 9),
+(5, 10),
+(5, 11),
+(5, 12),
+(5, 14),
+(5, 15),
+(5, 16),
+(5, 17),
+(5, 18),
+(5, 19),
+(5, 24),
+(5, 28),
+(5, 30),
+(5, 32),
+(5, 34),
+(6, 1),
+(6, 2),
+(6, 3),
+(6, 4),
+(6, 6),
+(6, 7),
+(6, 8),
+(6, 9),
+(6, 10),
+(6, 11),
+(6, 12),
+(6, 14),
+(7, 1),
+(7, 2),
+(7, 3),
+(7, 4),
+(7, 5),
+(7, 6),
+(7, 7),
+(7, 8),
+(7, 9),
+(7, 10),
+(7, 11),
+(7, 12),
+(7, 14),
+(7, 15),
+(7, 51),
+(8, 1),
+(8, 2),
+(8, 3),
+(8, 4),
+(8, 6),
+(8, 7),
+(8, 8),
+(8, 9),
+(8, 10),
+(8, 11),
+(8, 12),
+(8, 14),
+(8, 15),
+(9, 1),
+(9, 2),
+(9, 3),
+(9, 4),
+(9, 5),
+(9, 6),
+(9, 7),
+(9, 8),
+(9, 9),
+(9, 10),
+(9, 11),
+(9, 12),
+(9, 14),
+(9, 15),
+(9, 16),
+(9, 36),
+(10, 1),
+(10, 2),
+(10, 4),
+(10, 6),
+(10, 7),
+(10, 8),
+(10, 9),
+(10, 10),
+(10, 11),
+(10, 12),
+(10, 14),
+(10, 15),
+(10, 16),
+(10, 32),
+(10, 37),
+(11, 1),
+(11, 2),
+(11, 3),
+(11, 4),
+(11, 5),
+(11, 6),
+(11, 7),
+(11, 8),
+(11, 9),
+(11, 10),
+(11, 11),
+(11, 12),
+(11, 14),
+(11, 15),
+(11, 16),
+(25, 22),
+(25, 23),
+(25, 24),
+(25, 27),
+(25, 28),
+(25, 29),
+(25, 30),
+(25, 32),
+(25, 35),
+(25, 40),
+(33, 22),
+(33, 23),
+(33, 24),
+(33, 26),
+(33, 27),
+(33, 28),
+(33, 29),
+(33, 30),
+(33, 32),
+(33, 34),
+(33, 35),
+(36, 8),
+(36, 24),
+(36, 32),
+(36, 44),
+(36, 47),
+(37, 2),
+(37, 4),
+(37, 8),
+(37, 9),
+(37, 10),
+(37, 17),
+(37, 18),
+(37, 30),
+(37, 32),
+(37, 33),
+(37, 38),
+(37, 44),
+(38, 9),
+(38, 32),
+(38, 41),
+(38, 44),
+(38, 47),
+(39, 8),
+(39, 9),
+(39, 11),
+(39, 41),
+(39, 47),
+(40, 2),
+(40, 4),
+(40, 6),
+(40, 7),
+(40, 8),
+(40, 9),
+(40, 10),
+(40, 14),
+(40, 16),
+(40, 17),
+(40, 24),
+(40, 28),
+(40, 30),
+(40, 32),
+(40, 34),
+(40, 44),
+(40, 52),
+(41, 7),
+(41, 8),
+(41, 9),
+(41, 10),
+(41, 11),
+(41, 28),
+(41, 32),
+(41, 44),
+(41, 51),
+(41, 52);
+
+-- --------------------------------------------------------
+
+--
 -- Structure de la table `minimaxi`
 --
 
@@ -784,6 +1039,55 @@ INSERT INTO `minimaxi` (`CodeAlliage`, `CodeMiniMaxi`, `CodeElement`, `TeneurMin
 (41, 7, 8, 0.05, 0.15),
 (41, 8, 7, 0.3, 0.5),
 (41, 9, 6, 0.15, 0.25);
+
+-- --------------------------------------------------------
+
+--
+-- Doublure de structure pour la vue `v_compo`
+-- (Voir ci-dessous la vue réelle)
+--
+CREATE TABLE `v_compo` (
+`CodeCompo` int(11)
+,`CodeElement` int(11)
+,`Element` varchar(5)
+,`CodeMatiere` int(11)
+,`Rendement` double
+,`RendementLiquide` double
+,`Teneur` double
+);
+
+-- --------------------------------------------------------
+
+--
+-- Doublure de structure pour la vue `v_minimaxi`
+-- (Voir ci-dessous la vue réelle)
+--
+CREATE TABLE `v_minimaxi` (
+`CodeAlliage` int(11)
+,`CodeElement` int(11)
+,`Element` varchar(5)
+,`CodeMiniMaxi` int(11)
+,`TeneurMaxi` double
+,`TeneurMini` double
+);
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la vue `v_compo`
+--
+DROP TABLE IF EXISTS `v_compo`;
+
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `v_compo`  AS  select `compo`.`CodeCompo` AS `CodeCompo`,`compo`.`CodeElement` AS `CodeElement`,`element`.`Nom` AS `Element`,`compo`.`CodeMatiere` AS `CodeMatiere`,`compo`.`Rendement` AS `Rendement`,`compo`.`RendementLiquide` AS `RendementLiquide`,`compo`.`Teneur` AS `Teneur` from (`compo` join `element`) where (`compo`.`CodeElement` = `element`.`CodeElement`) ;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la vue `v_minimaxi`
+--
+DROP TABLE IF EXISTS `v_minimaxi`;
+
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `v_minimaxi`  AS  select `minimaxi`.`CodeAlliage` AS `CodeAlliage`,`minimaxi`.`CodeElement` AS `CodeElement`,`element`.`Nom` AS `Element`,`minimaxi`.`CodeMiniMaxi` AS `CodeMiniMaxi`,`minimaxi`.`TeneurMaxi` AS `TeneurMaxi`,`minimaxi`.`TeneurMini` AS `TeneurMini` from (`minimaxi` join `element`) where (`minimaxi`.`CodeElement` = `element`.`CodeElement`) ;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
