@@ -2279,7 +2279,7 @@ class PHP_CRUD_API {
  	'hostname'=>'localhost',
  	'username'=>'id783593_test',
  	'password'=>'test987',
- 	'database'=>'optima',
+ 	'database'=>'optimex',
  	'charset'=>'utf8'
  ));
  $api->executeCommand();

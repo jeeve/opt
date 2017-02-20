@@ -2,6 +2,11 @@ body {
 	background-color: #EEE;
 	font-family: Tahoma;
 	font-size: 12px;
+	padding-bottom: 20px;
+}
+
+.nombre {
+	text-align: right;
 }
 
 footer {
