@@ -10,7 +10,7 @@ function Simplex() {
 	var basis = new Array();
 	var basisp = new Array();
 	var minmax = 0.0;
-	var error = 0;
+	var error = {value: 0};
 	var ncon = 0;
 	var nltcon = 0;
 	var neqcon = 0;
@@ -164,9 +164,9 @@ function Simplex() {
 		while (v-error.value == 0) {
 			price( xcol, trow, error );
 			if ( v-error.value == 0 ) 
-				leave( xrow, xcol, error );
+				leave( xrow, xcol.value, error );
 			if (v-error.value == 0 ) then
-				pivot( xrow, xcol );
+				pivot( xrow.value, xcol.value );
 		}
 	}
 	
@@ -197,6 +197,8 @@ function Simplex() {
 		optimize( trows2, v-error );		
 	}
 }
+
+// méthodes
 
 Simplex.prototype.prepareCalcul(sens, nbVariables, nbInferieurs, nbEgals, nbSuperieurs) {
 	var row, col, column;
@@ -242,22 +244,73 @@ Simplex.prototype.prepareCalcul(sens, nbVariables, nbInferieurs, nbEgals, nbSupe
   ncon = 0;
 }
 
-Simplex.prototype.ajouteContrainte(coeff, signe, secondMembre);
-var col : integer;
-begin
-  case Signe of
-    -1 : ni := ni + 1;
-     0 : ne := ne + 1;
-    +1 : ns := ns + 1;
-    else raise ESimplexError.Create('Signe non définit');
-  end;
+Simplex.prototype.ajouteContrainte(coeff, signe, secondMembre) {
+	switch(sign) {
+		case -1 : ni++; break;
+		case 0 : ne++; break;
+		case +1 : ns++; break;
+		default console.log('Signe non définit');
+  }
 
-  ncon := ncon + 1;
-  if ncon+2 > rowmx then raise ESimplexError.Create('Trop de contraintes');
+	ncon++;
+	if (ncon+2 > rowmx)
+		console.log('Trop de contraintes');
 
-  for col := 1 to nvar do
-    putmatrix(ncon, col, Coeff[col]);
-  Inegalite[ncon] := Signe;
-  putmatrix(ncon, 0, SecondMembre);
-  putmatrix(ncon, tcols2, SecondMembre);
+	for (var col = 1; col <= nvar; col++) {
+		putmatrix(ncon, col, coeff[col]);
+	}
+  
+	inegalite[ncon] = signe;
+	putmatrix(ncon, 0, secondMembre);
+	putmatrix(ncon, tcols2, secondMembre);
+  }
+}
+
+Simplex.prototype.definitFonction(coeff) {
+	var row, value;
+	trieContraintes();
+	for (var col = 1; col <= nvar; col++) {
+		putmatrix(0 , col, minmax * coeff[col]);
+		putmatrix(trows2, col, minmax * coeff[col]);
+	}
+	// calculate artifical variables 
+	for (var col = 1; col <= nvar; col++) {
+		value = zero;
+		for (row = nltcon+1; row <= ncon; row++) {
+			value = value - getmatrix( row, col );
+		}
+      putmatrix( trows1, col, value );
+    }
+}
+
+Simplex.prototype.Optimise() {
+	if ((ni != nltcon) || (ne != neqcon) || (ns != ngtcon)) 
+		console.log('Nombre de contraintes incorrect');
+	if ( error.value == 0 ) 
+      simplex( error );
+	if ( error.value < 0 ) 
+     console.log('Inconsistent Data - Not Run');
+	if ( error.value == 2 ) then
+     console.log('The Solution is Unbounded');
+	if ( error.value == 3 ) then
+     console.log('Le problème est insoluble');
+	if ((error.value == 0) || (error.value == 1)) 
+		return true;
+	else
+		return false;
 end;
+
+Simplex.prototype.litResultats() {
+	var resulat = {fonction: -minmax*getmatrix(trows2, tcols2), coeff: []};
+	setbasis;
+	resulat.fonction := -minmax*getmatrix(trows2, tcols2);
+	for (var col = 1; col <= nvar; col++) {
+		if (basisp[col] != 0) {
+			resulat.coeff[col] := getmatrix(basisp[col], tcols2);
+		}
+		else {
+			resulat.coeff[col] = 0;
+		}
+	}
+	return resulat;
+}
