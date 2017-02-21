@@ -1,0 +1,27 @@
+	<div>
+		<select ng-options="alliage as alliage.Nom for alliage in alliages track by alliage.CodeAlliage" ng-model="alliage" ng-change="changeAlliage()"></select> 
+		<br>
+
+		<h3>{{alliage.Nom}}</h3>
+		<table>
+			<tr ng-repeat="m in alliage.minimaxi">
+				<td>{{m.Element}}</td>
+				<td class="nombre">{{m.TeneurMini | number:2}}</td>
+				<td class="nombre">{{m.TeneurMaxi | number:2}}</td>
+			</tr>
+		</table>
+		<br>
+		
+		<h3>Matières premières</h3>
+			<div ng-repeat="m in matieres">
+				{{m.Nom}}
+				<!--
+				<table>
+					<tr ng-repeat="c in m.compo">
+						<td>{{c.Element}}</td>
+						<td class="nombre">{{c.Teneur | number:2}}</td>
+					</tr>
+				</table>				
+				-->
+			</div>
+	</div>	

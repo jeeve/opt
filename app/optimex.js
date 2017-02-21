@@ -1,15 +1,22 @@
 var app = angular.module('optimex', ['ngRoute']);
-	
-app.controller('optimexCtrl', ['$scope', '$http', function($scope, $http) {
- 
-	$http.get('rest/api.php/alliage').success(function(response) {
-		$scope.alliages = php_crud_api_transform(response).alliage;	
-	});
 
-	var minimaxis = null;
-	$http.get('rest/api.php/v_minimaxi').success(function(response) {
-		minimaxis = php_crud_api_transform(response).v_minimaxi; 
-	});		
+app.config(function($routeProvider){
+  $routeProvider
+    .when('/',{controller:'optimexCtrl',
+    templateUrl: 'app/views/main.html',
+    resolve:{
+      'bdData':function(bd){
+        // MyServiceData will also be injectable in your controller, if you don't want this you could create a new promise with the $q service
+        return bd.promise;
+      }
+    }})
+  });
+  
+app.controller('optimexCtrl', ['$scope', '$http', 'bd', function($scope, $http, bd) {
+
+	$scope.alliages = bd.alliages();
+
+	var minimaxis = bd.minimaxis();
 
 	var matieres = null;
 	$http.get('rest/api.php/matiere').success(function(response) {
@@ -26,9 +33,9 @@ app.controller('optimexCtrl', ['$scope', '$http', function($scope, $http) {
 					}
 				}
 			}
-		});	
-	});		
-	
+		}
+	)});	
+
 	var matieresAlliage = null;
 	$http.get('rest/api.php/matieresalliage').success(function(response) {
 		matieresAlliage = php_crud_api_transform(response).matieresalliage; 
@@ -55,6 +62,7 @@ app.controller('optimexCtrl', ['$scope', '$http', function($scope, $http) {
 		}
 	}
 }]);
-	
+
+
 
 
