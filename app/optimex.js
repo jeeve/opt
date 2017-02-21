@@ -15,31 +15,19 @@ app.config(function($routeProvider){
 app.controller('optimexCtrl', ['$scope', '$http', 'bd', function($scope, $http, bd) {
 
 	$scope.alliages = bd.alliages();
-
 	var minimaxis = bd.minimaxis();
+	var matieres = bd.matieres();
+	var compos = bd.compos();
+	var matieresAlliage = bd.matieresAlliage();
 
-	var matieres = null;
-	$http.get('rest/api.php/matiere').success(function(response) {
-		matieres = php_crud_api_transform(response).matiere; 
-		
-		var compos = null;
-		$http.get('rest/api.php/v_compo').success(function(response) {
-			compos = php_crud_api_transform(response).v_compo; 
-			for (var i = 0; i < matieres.length; i++) {
-				matieres[i].compo = [];
-				for (var j = 0; j < compos.length; j++) {
-					if (matieres[i].CodeMatiere == compos[j].CodeMatiere) {
-						matieres[i].compo.push(compos[j]);
-					}
-				}
+	for (var i = 0; i < matieres.length; i++) {
+		matieres[i].compo = [];
+		for (var j = 0; j < compos.length; j++) {
+			if (matieres[i].CodeMatiere == compos[j].CodeMatiere) {
+				matieres[i].compo.push(compos[j]);
 			}
 		}
-	)});	
-
-	var matieresAlliage = null;
-	$http.get('rest/api.php/matieresalliage').success(function(response) {
-		matieresAlliage = php_crud_api_transform(response).matieresalliage; 
-	});		
+	}		
 	
 	$scope.changeAlliage = function() {
 		$scope.matieres = [];
