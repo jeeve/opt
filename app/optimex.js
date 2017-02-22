@@ -1,19 +1,9 @@
 var app = angular.module('optimex', ['ngRoute']);
 
-app.config(function($routeProvider){
-  $routeProvider
-    .when('/',{controller:'optimexCtrl',
-    templateUrl: 'app/views/main.html',
-    resolve:{
-      'bdData':function(bd){
-        // MyServiceData will also be injectable in your controller, if you don't want this you could create a new promise with the $q service
-        return bd.promise;
-      }
-    }})
-  });
-  
 app.controller('optimexCtrl', ['$scope', '$http', 'bd', function($scope, $http, bd) {
 
+	bd.promise.then(function () {
+    
 	$scope.alliages = bd.alliages();
 	var minimaxis = bd.minimaxis();
 	var matieres = bd.matieres();
@@ -49,6 +39,8 @@ app.controller('optimexCtrl', ['$scope', '$http', 'bd', function($scope, $http, 
 			}
 		}
 	}
+	
+	});
 }]);
 
 
