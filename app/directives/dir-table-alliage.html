@@ -1,5 +1,5 @@
 		<h3>{{alliage.Nom}}</h3>
-		<button ng-show="alliage" ng-click="toggle()">Editer</button>
+		<button ng-show="alliage" ng-click="toggle()" class="{{etatBouton}}">Editer</button>
 		<table>
 			<tr ng-repeat="m in alliage.minimaxi">
 				<td>{{m.Element}}</td>

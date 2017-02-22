@@ -27,16 +27,31 @@ body {
 } 
 
 #side {
-	 float: left;
-	 top: 40px;
-     position: fixed;	
-	 width: 200px;
-	 height: calc(100% - 60px);
-	 overflow-y: scroll;
+	float: left;
+	top: 40px;
+    position: fixed;	
+	width: 200px;
+	height: calc(100% - 60px);
+	overflow-y: scroll;
+}
+
+#main {
+	position: fixed;
+	top: 40px;
+	left: 215px;
+	width: calc(100% - 220px);	
 }
 
 .nombre {
 	text-align: right;
+}
+
+.btn-releve {
+	border-style: outset;
+}
+
+.btn-enfonce {
+	border-style: inset;
 }
 
 footer {

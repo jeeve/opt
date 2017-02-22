@@ -1,5 +1,5 @@
 				<h3>{{matiere.Nom}}</h3>
-				<button ng-show="matiere" ng-click="toggle()">Editer</button>
+				<button ng-show="matiere" ng-click="toggle()" class="{{etatBouton}}">Editer</button>
 				<table>
 					<tr ng-repeat="c in matiere.compo">
 						<td>{{c.Element}}</td>
