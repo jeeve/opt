@@ -16,34 +16,24 @@
 	<script src="rest/lib/php_crud_api_transform.js"></script>
 	<script src="app/optimex.js"></script>
 	<script src="app/services/bd.js"></script>
+	<script src="app/directives/dir-table-alliage.js"></script>
+	<script src="app/directives/dir-table-matiere.js"></script>
 </head>
 <body ng-controller="optimexCtrl">
 
 	<div>
+		<h2>Alliage visé</h2>
+		
 		<select ng-options="alliage as alliage.Nom for alliage in alliages track by alliage.CodeAlliage" ng-model="alliage" ng-change="changeAlliage()"></select> 
 		<br>
 
-		<h3>{{alliage.Nom}}</h3>
-		<table>
-			<tr ng-repeat="m in alliage.minimaxi">
-				<td>{{m.Element}}</td>
-				<td class="nombre">{{m.TeneurMini | number:2}}</td>
-				<td class="nombre">{{m.TeneurMaxi | number:2}}</td>
-			</tr>
-		</table>
+		<dir-table-alliage></dir-table-alliage>
+
 		<br>
-		
-		<h3>Matières premières</h3>
+			
+		<h2>Matières premières</h2>
 			<div ng-repeat="m in matieres">
-				{{m.Nom}}
-				<!--
-				<table>
-					<tr ng-repeat="c in m.compo">
-						<td>{{c.Element}}</td>
-						<td class="nombre">{{c.Teneur | number:2}}</td>
-					</tr>
-				</table>				
-				-->
+				<dir-table-matiere table="m"></dir-table-matiere>
 			</div>
 	</div>	
 
@@ -51,7 +41,6 @@
 	par <a href="http://jvjulien.free.fr" target="_blank">au gré du vent 1.0</a>
 	</p>
 	</footer>
-
 
 </body>
 </html>

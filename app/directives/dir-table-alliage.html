@@ -1,0 +1,8 @@
+		<h3>{{alliage.Nom}}</h3>
+		<table>
+			<tr ng-repeat="m in alliage.minimaxi">
+				<td>{{m.Element}}</td>
+				<td class="nombre">{{m.TeneurMini | number:2}}</td>
+				<td class="nombre">{{m.TeneurMaxi | number:2}}</td>
+			</tr>
+		</table>

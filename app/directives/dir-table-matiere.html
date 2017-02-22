@@ -1,0 +1,7 @@
+				<h3>{{matiere.Nom}}</h3>
+				<table>
+					<tr ng-repeat="c in matiere.compo">
+						<td>{{c.Element}}</td>
+						<td class="nombre">{{c.Teneur | number:2}}</td>
+					</tr>
+				</table>	

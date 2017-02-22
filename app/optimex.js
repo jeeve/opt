@@ -46,3 +46,5 @@ app.controller('optimexCtrl', ['$scope', '$http', 'bd', function($scope, $http, 
 
 
 
+
+
