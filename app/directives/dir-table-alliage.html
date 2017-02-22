@@ -1,8 +1,11 @@
 		<h3>{{alliage.Nom}}</h3>
+		<button ng-show="alliage" ng-click="toggle()">Editer</button>
 		<table>
 			<tr ng-repeat="m in alliage.minimaxi">
 				<td>{{m.Element}}</td>
-				<td class="nombre">{{m.TeneurMini | number:2}}</td>
-				<td class="nombre">{{m.TeneurMaxi | number:2}}</td>
+				<td ng-hide="showMe" class="nombre">{{m.TeneurMini | number:2}}</td>
+				<td ng-hide="showMe" class="nombre">{{m.TeneurMaxi | number:2}}</td>
+				<td ng-show="showMe" class="nombre"><input type="text" value="{{m.TeneurMini | number:2}}" size="5"></input></td>
+				<td ng-show="showMe" class="nombre"><input type="text" value="{{m.TeneurMini | number:2}}" size="5"></input></td>
 			</tr>
 		</table>

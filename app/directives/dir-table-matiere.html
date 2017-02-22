@@ -1,7 +1,9 @@
 				<h3>{{matiere.Nom}}</h3>
+				<button ng-show="matiere" ng-click="toggle()">Editer</button>
 				<table>
 					<tr ng-repeat="c in matiere.compo">
 						<td>{{c.Element}}</td>
-						<td class="nombre">{{c.Teneur | number:2}}</td>
+						<td ng-hide="showMe" class="nombre">{{c.Teneur | number:2}}</td>
+						<td ng-show="showMe" class="nombre"><input type="text" value="{{c.Teneur | number:2}}" size="5"></input></td>
 					</tr>
 				</table>	
