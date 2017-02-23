@@ -19,34 +19,22 @@
 	<script src="app/directives/dir-table-alliage.js"></script>
 	<script src="app/directives/dir-table-matiere.js"></script>
 </head>
-<body ng-controller="optimexCtrl">
+
+<body ng-controller="mainCtrl">
 	
 	<div id="top">
+		
+		<a href="#/calcul.html">Calcul</a>
+		<a href="#/alliages.html">Alliages</a>
+		<a href="#/matieres.html">Matières premières</a>
+		
 		<div id="titre">
 			Optimex
 		</div>	
-	</div>	
-		
-	<div id="side">
-		<h2>Alliage visé</h2>
-		
-		<select ng-options="alliage as alliage.Nom for alliage in alliages track by alliage.CodeAlliage" ng-model="alliage" ng-change="changeAlliage()"></select> 
-		<br>
+	</div>
 
-		<dir-table-alliage table="alliage"></dir-table-alliage>
-
-		<br>
-			
-		<h2>Matières premières</h2>
-			<div ng-repeat="m in matieres">
-				<dir-table-matiere table="m"></dir-table-matiere>
-			</div>
-	</div>	
-	
-	<div id="main">
-		<h2>Tonnage visé</h2>
-		<input type="text"></input>
-		<button>Calculer</button>
+	<div ng-view>	
+		
 	</div>
 
 	<footer><p>

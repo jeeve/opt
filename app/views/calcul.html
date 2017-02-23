@@ -1,0 +1,25 @@
+<div>
+
+	<div id="side">
+		<h2>Alliage visé</h2>
+		
+		<select ng-options="alliage as alliage.Nom for alliage in alliages track by alliage.CodeAlliage" ng-model="alliage" ng-change="changeAlliage()"></select> 
+		<br>
+
+		<dir-table-alliage table="alliage"></dir-table-alliage>
+
+		<br>
+			
+		<h2>Matières premières</h2>
+			<div ng-repeat="m in matieres">
+				<dir-table-matiere table="m"></dir-table-matiere>
+			</div>
+	</div>	
+	
+	<div id="main-calcul">
+		<h2>Tonnage visé</h2>
+		<input type="text" ng-model="tonnage" value="{{tonnage | number:1}}"></input>
+		<button>Calculer</button>
+	</div>
+	
+</div>	

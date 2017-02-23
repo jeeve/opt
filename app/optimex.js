@@ -1,6 +1,28 @@
 var app = angular.module('optimex', ['ngRoute']);
 
-app.controller('optimexCtrl', ['$scope', '$http', 'bd', function($scope, $http, bd) {
+	app.config(function($routeProvider) {
+		$routeProvider
+		.when("/", {
+			templateUrl: "app/views/calcul.html",
+			controller: 'calculCtrl' })		
+		.when("/calcul", {
+			templateUrl: "app/views/calcul.html",
+			controller: 'calculCtrl' })		
+		.when("/alliages", {
+			templateUrl: "app/views/alliages.html",
+			controller: 'calculCtrl' })
+		.when("/matieres", {
+			templateUrl: "app/views/matieres.html",
+			controller: 'calculCtrl' })
+		.otherwise({
+			redirectTo: "/" }
+		)});
+	
+app.controller('mainCtrl', ['$scope', function($scope) {	
+
+}]);
+
+app.controller('calculCtrl', ['$scope', '$http', 'bd', function($scope, $http, bd) {
 
 	bd.promise.then(function () {
 		    
@@ -9,6 +31,8 @@ app.controller('optimexCtrl', ['$scope', '$http', 'bd', function($scope, $http, 
 	var matieres = bd.matieres();
 	var compos = bd.compos();
 	var matieresAlliage = bd.matieresAlliage();
+	
+	$scope.tonnage = 100;
 
 	for (var i = 0; i < matieres.length; i++) {
 		matieres[i].compo = [];

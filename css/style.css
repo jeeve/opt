@@ -24,7 +24,13 @@ body {
 	margin-right: 10px;
 	font-size: 18px;
 	font-weight: bold;
+	float: right;
 } 
+
+.main {
+	position: fixed;
+	top: 40px;
+}
 
 #side {
 	float: left;
@@ -41,7 +47,7 @@ body {
 	margin-left: -3px;
 }
 
-#main {
+#main-calcul {
 	position: fixed;
 	top: 40px;
 	left: 215px;
