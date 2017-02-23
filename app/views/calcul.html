@@ -6,13 +6,13 @@
 		<select ng-options="alliage as alliage.Nom for alliage in alliages track by alliage.CodeAlliage" ng-model="alliage" ng-change="changeAlliage()"></select> 
 		<br>
 
-		<dir-table-alliage table="alliage"></dir-table-alliage>
+		<table-alliage table="alliage"></table-alliage>
 
 		<br>
 			
 		<h2>Matières premières</h2>
 			<div ng-repeat="m in matieres">
-				<dir-table-matiere table="m"></dir-table-matiere>
+				<table-matiere table="m"></table-matiere>
 			</div>
 	</div>	
 	

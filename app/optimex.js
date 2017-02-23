@@ -1,6 +1,6 @@
 var app = angular.module('optimex', ['ngRoute']);
 
-	app.config(function($routeProvider) {
+	app.config(['$routeProvider', function($routeProvider) {
 		$routeProvider
 		.when("/", {
 			templateUrl: "app/views/calcul.html",
@@ -15,13 +15,10 @@ var app = angular.module('optimex', ['ngRoute']);
 			templateUrl: "app/views/matieres.html",
 			controller: 'calculCtrl' })
 		.otherwise({
-			redirectTo: "/" }
-		)});
+			redirectTo: "/" });
+		}
+	]);
 	
-app.controller('mainCtrl', ['$scope', function($scope) {	
-
-}]);
-
 app.controller('calculCtrl', ['$scope', '$http', 'bd', function($scope, $http, bd) {
 
 	bd.promise.then(function () {

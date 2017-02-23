@@ -16,17 +16,18 @@
 	<script src="rest/lib/php_crud_api_transform.js"></script>
 	<script src="app/optimex.js"></script>
 	<script src="app/services/bd.js"></script>
-	<script src="app/directives/dir-table-alliage.js"></script>
-	<script src="app/directives/dir-table-matiere.js"></script>
+	<script src="app/directives/directives.js"></script>
+	<script src="app/directives/tables.js"></script>
+
 </head>
 
-<body ng-controller="mainCtrl">
+<body>
 	
 	<div id="top">
 		
-		<a href="#/calcul.html">Calcul</a>
-		<a href="#/alliages.html">Alliages</a>
-		<a href="#/matieres.html">Matières premières</a>
+		<button go-click="calcul">Calcul</button>
+		<button go-click="alliages">Alliages</button>
+		<button go-click="matieres">Matières premières</button>
 		
 		<div id="titre">
 			Optimex
@@ -34,7 +35,6 @@
 	</div>
 
 	<div ng-view>	
-		
 	</div>
 
 	<footer><p>
