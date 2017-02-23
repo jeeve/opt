@@ -35,6 +35,12 @@ body {
 	overflow-y: scroll;
 }
 
+#side td h3 {
+	width : 115px;
+	word-wrap: break-word;
+	margin-left: -3px;
+}
+
 #main {
 	position: fixed;
 	top: 40px;

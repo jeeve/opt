@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Client :  127.0.0.1
--- Généré le :  Lun 20 Février 2017 à 20:00
+-- Généré le :  Jeu 23 Février 2017 à 13:04
 -- Version du serveur :  5.7.14
 -- Version de PHP :  5.6.25
 
@@ -37,13 +37,13 @@ CREATE TABLE `alliage` (
 
 INSERT INTO `alliage` (`CodeAlliage`, `Nom`) VALUES
 (1, 'Fonte SiMo'),
-(2, 'Fonte Nir?sist'),
-(3, 'Fonte GL1alli'),
-(4, 'Fonte GL2 alli'),
-(5, 'Fonte alli?e Cr'),
+(2, 'Fonte Nirésist'),
+(3, 'Fonte GL1alliée'),
+(4, 'Fonte GL2 alliée'),
+(5, 'Fonte alliée Cr'),
 (6, 'Fonte GL1'),
-(7, 'Fonte GL3 alli'),
-(8, 'Fonte alli?e HCr'),
+(7, 'Fonte GL3 alliée'),
+(8, 'Fonte alliée HCr'),
 (9, 'Fonte GS 400-15'),
 (10, 'Fonte GS 500-7'),
 (11, 'Fonte GS 700-2'),
@@ -53,10 +53,10 @@ INSERT INTO `alliage` (`CodeAlliage`, `Nom`) VALUES
 (35, '35CD4'),
 (36, 'FonteGScanal'),
 (37, 'FonteGLPhosphore'),
-(38, 'Fourdecoul?eGS1'),
-(39, 'FonteGSm?talpoche'),
-(40, 'FonteGL3m?lange'),
-(41, 'FonteGS7002m?lange');
+(38, 'FourdecouléeGS1'),
+(39, 'FonteGSmétalpoche'),
+(40, 'FonteGL3mélange'),
+(41, 'FonteGS7002mélange');
 
 -- --------------------------------------------------------
 
@@ -533,16 +533,16 @@ INSERT INTO `matiere` (`CodeMatiere`, `CodeFamille`, `Nom`, `Prix`, `Stock`) VAL
 (6, 8, 'recarburantB', 750, 905.392370351632),
 (7, 7, 'Ferro-chrome', 7622, 490.671264134429),
 (8, 7, 'Ferro-silicium', 762, 281.540917581671),
-(9, 7, 'Ferro-mangan?se', 488, 77.1203886668653),
+(9, 7, 'Ferro-manganèse', 488, 77.1203886668653),
 (10, 7, 'Ferro-phosphore', 442, 98.7718620084595),
-(11, 7, 'Ferro-molybd?ne', 16770, 44.0859962004943),
+(11, 7, 'Ferro-molybdène', 16770, 44.0859962004943),
 (12, 7, 'Ferro-soufre', 457, 97.0263533541381),
 (13, 7, 'Ferro-vanadium', 9146, 98.0248543728919),
 (14, 7, 'Cuivre', 1677, 46.8081072820147),
 (15, 7, 'Nickel', 7927, 939.216133278011),
-(16, 7, 'Ferro-chrome suraffin', 7170, 243.975366871214),
+(16, 7, 'Ferro-chrome suraffiné', 7170, 243.975366871214),
 (17, 6, 'acier E40', 145, 4972.74591599293),
-(18, 6, 'Fonte H?matite', 198, 977),
+(18, 6, 'Fonte Hématite', 198, 977),
 (19, 6, 'Fonte origine 1 pour GS', 225, 8542.99079778586),
 (21, 6, 'fer pur origine1', 820, 3000),
 (22, 7, 'Fe Si 75% (915GE)', 1100, 200),
@@ -557,15 +557,15 @@ INSERT INTO `matiere` (`CodeMatiere`, `CodeFamille`, `Nom`, `Prix`, `Stock`) VAL
 (31, 11, 'Mg pur type1', 1700, 95),
 (32, 8, 'Graphite', 560, 297.892349973308),
 (33, 6, 'retoursFGL2', 150, 90),
-(34, 7, 'Fe Cr carbur', 7170, 793.655407280703),
-(35, 7, 'Fe Cr suraffin? (915EZ)', 7170, 552),
+(34, 7, 'Fe Cr carburé', 7170, 793.655407280703),
+(35, 7, 'Fe Cr suraffiné (915EZ)', 7170, 552),
 (37, 6, 'retoursFGS2', 180, 985.003412503571),
 (38, 6, 'retoursFGL1', 150, 100),
 (39, 6, 'retoursFGL3', 150, 1000),
 (40, 6, 'retoursFGS1', 150, 1000),
 (41, 11, 'FeSiMg6,20%', 1010, 229),
 (43, 11, 'NiMg', 7540, 4999),
-(44, 8, 'coke de p?trole', 450, 61.4002359724084),
+(44, 8, 'coke de pétrole', 450, 61.4002359724084),
 (45, 10, 'bainFGL', 210, 1000),
 (47, 10, 'bainFGS', 280, 1000),
 (48, 11, 'VL63', 4500, 100),

@@ -3,7 +3,7 @@ var app = angular.module('optimex', ['ngRoute']);
 app.controller('optimexCtrl', ['$scope', '$http', 'bd', function($scope, $http, bd) {
 
 	bd.promise.then(function () {
-    
+		    
 	$scope.alliages = bd.alliages();
 	var minimaxis = bd.minimaxis();
 	var matieres = bd.matieres();
