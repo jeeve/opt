@@ -1,17 +1,19 @@
 		<table>
 		<tr>
-		<td>
-		<h3>{{matiere.Nom}}</h3>
+		<td class="colonne-nom">
+		<div class="nom-matiere">{{matiere.Nom}}</div>
 		</td>
-		<td>
-		<button ng-show="matiere" ng-click="toggle()" class="{{etatBouton}}">Editer</button>
+		<td class="colonne-bouton">
+			<button ng-show="matiere" ng-click="developpe()" class="{{etatBoutonDetail}}">...</button>
+			<button ng-show="matiere && detail" ng-click="edit()" class="{{etatBoutonEdit}}">Editer</button>
 		</td>
 		</tr>
 	</table>	
-	<b>
+	<div ng-show="detail">
+	
 	<span ng-hide="showMe">Prix {{matiere.Prix | number:2}}</span>
 	<span ng-show="showMe" class="nombre">Prix <input ng-model="matiere.Prix" type="text" value="{{matiere.Prix | number:2}}" size="10"></input></span>
-	</b>
+	
 				<table>
 					<tr ng-repeat="c in matiere.compo">
 						<td>{{c.Element}}</td>
@@ -19,3 +21,4 @@
 						<td ng-show="showMe" class="nombre"><input ng-model="c.Teneur" type="text" value="{{c.Teneur | number:2}}" size="5"></input></td>
 					</tr>
 				</table>	
+	</div>			

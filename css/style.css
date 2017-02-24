@@ -41,10 +41,26 @@ body {
 	overflow-y: scroll;
 }
 
-#side td h3 {
-	width : 115px;
-	word-wrap: break-word;
+#side td .nom-matiere {
 	margin-left: -3px;
+}
+
+.nom-matiere-selectionnee .nom-matiere {
+	font-weight: bold;
+}
+
+.colonne-nom {
+	vertical-align: top;
+	width: 140px;
+}
+
+.colonne-bouton {
+	text-align: right; 
+	width: 30px;
+}
+
+.colonne-bouton button {
+	margin-bottom: 3px;
 }
 
 #main-calcul {

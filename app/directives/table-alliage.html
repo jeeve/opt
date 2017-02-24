@@ -1,10 +1,10 @@
-	<table>
+	<table class="nom-matiere-selectionnee ">
 		<tr>
-		<td>
-		<h3>{{alliage.Nom}}</h3>
+		<td class="colonne-nom">
+		<div class="nom-matiere">{{alliage.Nom}}</div>
 		</td>
-		<td>
-		<button ng-show="alliage" ng-click="toggle()" class="{{etatBouton}}">Editer</button>
+		<td class="colonne-bouton">
+			<button ng-show="alliage" ng-click="toggle()" class="{{etatBouton}}">Editer</button>
 		</td>
 		</tr>
 	</table>	

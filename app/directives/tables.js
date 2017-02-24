@@ -25,15 +25,30 @@ app.directive("tableMatiere", function() {
 		scope: { matiere: '=table'},
         templateUrl: 'app/directives/table-matiere.html',
 		link: function(scope, element, attrs) {
-			scope.etatBouton = 'btn-releve';
+			scope.etatBoutonEdit = 'btn-releve';
             scope.showMe = false;
-            scope.toggle = function toggle(){
+            scope.edit = function () {
                 scope.showMe = !scope.showMe;
-				if (scope.etatBouton == 'btn-releve')
-					scope.etatBouton = 'btn-enfonce'
+				if (scope.etatBoutonEdit == 'btn-releve')
+					scope.etatBoutonEdit = 'btn-enfonce'
 				else
-					scope.etatBouton = 'btn-releve';
+					scope.etatBoutonEdit = 'btn-releve';
             };
-		}
+			scope.etatBoutonDetail = 'btn-releve';
+			scope.detail = false;
+            scope.developpe = function () {
+				scope.detail = !scope.detail;
+				if (scope.etatBoutonDetail == 'btn-releve') {
+					scope.etatBoutonDetail = 'btn-enfonce';
+					element.addClass('nom-matiere-selectionnee');
+				}
+				else
+				{
+					scope.etatBoutonDetail = 'btn-releve';
+					element.removeClass('nom-matiere-selectionnee');
+
+				}
+            };
+			}
         }
 });
