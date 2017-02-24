@@ -2277,9 +2277,9 @@ class PHP_CRUD_API {
  $api = new PHP_CRUD_API(array(
  	'dbengine'=>'MySQL',
  	'hostname'=>'localhost',
- 	'username'=>'id783593_test',
+ 	'username'=>'id907646_test',
  	'password'=>'test987',
- 	'database'=>'optimex',
+ 	'database'=>'id907646_optimex',
  	'charset'=>'utf8'
  ));
  $api->executeCommand();
