@@ -23,7 +23,7 @@ app.service("bd", function($http) {
 		.then(function () {
 			return $http.get('rest/api.php/matieresalliage').success(function(response) {
 				myMatieresAlliage = php_crud_api_transform(response).matieresalliage; })	
-				});		
+				});				
 			
 	return {
 		promise: myPromise,
