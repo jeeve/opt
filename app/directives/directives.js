@@ -8,7 +8,7 @@ app.directive( 'goClick', ['$location', function ( $location ) {
 
     element.bind( 'click', function () {
       scope.$apply( function () {
-        $location.path( path );
+		$location.path( path );
       });
     });
   };

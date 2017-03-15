@@ -21,13 +21,13 @@
 
 </head>
 
-<body>
+<body ng-controller='mainCtrl'>
 	
 	<div id="top">
 		
-		<button go-click="calcul">Calcul</button>
-		<button go-click="alliages">Alliages</button>
-		<button go-click="matieres">Matières premières</button>
+		<button go-click="calcul" ng-click="goCalcul()" class="{{etatBoutonCalcul}}">Calcul</button>
+		<button go-click="alliages" ng-click="goAlliages()" class="{{etatBoutonAlliages}}">Alliages</button>
+		<button go-click="matieres" ng-click="goMatieres()" class="{{etatBoutonMatieres}}">Matières premières</button>
 		
 		<div id="titre">
 			Optimex

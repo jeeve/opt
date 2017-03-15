@@ -19,6 +19,30 @@ var app = angular.module('optimex', ['ngRoute']);
 		}
 	]);
 	
+app.controller('mainCtrl', ['$scope', function($scope) {
+	$scope.etatBoutonCalcul = 'btn-enfonce';
+	$scope.etatBoutonAlliages = 'btn-releve';
+	$scope.etatBoutonMatieres = 'btn-releve';
+	
+	$scope.goCalcul = function() {
+		$scope.etatBoutonCalcul = 'btn-enfonce';
+		$scope.etatBoutonAlliages = 'btn-releve';
+		$scope.etatBoutonMatieres = 'btn-releve';
+	}
+
+	$scope.goAlliages = function() {
+		$scope.etatBoutonCalcul = 'btn-releve';
+		$scope.etatBoutonAlliages = 'btn-enfonce';
+		$scope.etatBoutonMatieres = 'btn-releve';
+	}
+
+	$scope.goMatieres = function() {
+		$scope.etatBoutonCalcul = 'btn-releve';
+		$scope.etatBoutonAlliages = 'btn-releve';
+		$scope.etatBoutonMatieres = 'btn-enfonce';
+	}
+}]);	
+	
 app.controller('calculCtrl', ['$scope', '$http', 'bd', function($scope, $http, bd) {
 
 	bd.promise.then(function () {
